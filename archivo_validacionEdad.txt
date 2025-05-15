@@ -1,0 +1,8 @@
+Funcion puede <- verificarEdad (edadPersona)
+	Definir puede Como Logico
+	Si edadPersona >= 18 Entonces
+		puede <- Verdadero
+	Sino
+		puede <- Falso
+	FinSi
+FinFuncion
