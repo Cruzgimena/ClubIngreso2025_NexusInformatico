@@ -1,0 +1,39 @@
+Algoritmo ControlIngresoClub
+		Definir nombre Como Caracter
+		Definir edad Como Entero
+		Definir accesosPermitidos Como Entero
+		Definir accesosDenegados Como Entero
+		Definir i Como Entero
+		Definir puedeIngresar Como Logico
+		Definir numPersonas Como Entero
+		
+		// Inicializar contadores
+		accesosPermitidos <- 0
+		accesosDenegados <- 0
+		
+		// Preguntar cuántas personas van a ingresar
+		Escribir "Ingrese la cantidad de personas a registrar:"
+		Leer numPersonas
+		
+		// Bucle PARA para registrar a cada persona
+		Para i <- 1 Hasta numPersonas Hacer
+			Escribir "" // Salto de línea para mejor presentación
+			Escribir "Ingrese el nombre de la persona " , i , ":"
+			Leer nombre
+			Escribir "Ingrese la edad de " , nombre , ":"
+			Leer edad
+			
+			// Llamada a la función para verificar si puede ingresar
+			puedeIngresar <- verificarEdad(edad)
+			
+			// Condicional SI...SINO para determinar el acceso
+			Si puedeIngresar Entonces
+				Escribir nombre , ": Acceso permitido. ¡Bienvenido/a!"
+				accesosPermitidos <- accesosPermitidos + 1
+			Sino
+				Escribir nombre , ": Acceso denegado. Solo mayores de edad pueden ingresar."
+				accesosDenegados <- accesosDenegados + 1
+			FinSi
+		FinPara
+	
+FinAlgoritmo
